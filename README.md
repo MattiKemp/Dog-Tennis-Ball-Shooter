@@ -4,6 +4,8 @@ https://www.chewy.com/ifetch-mini-automatic-ball-launcher/dp/142434?utm_source=g
 
 ![Alt text](/images//Melissas\ poor\ pup.jpg?raw=true "Unncessary")
 
+#Design Principles
+
 #Componenets
 
 #Capabilities
