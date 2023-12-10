@@ -9,7 +9,7 @@ modified: 2023 Dec 10
 
 ---
 
-Dog-Tennis-Ball-Shooter
+Open Shooter
 =======================
 
 Origin
@@ -43,7 +43,7 @@ Future Plans
 Component Lists & Details
 -------------------------
 
-* **Arduino**(WIP)
+* [#component-details-arduino]:**Arduino**(WIP)
 * **Raspberry Pi**(WIP)
 * **Motors**(WIP)
 * **Sensor**(WIP)
