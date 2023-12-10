@@ -43,7 +43,7 @@ Future Plans
 Component Lists & Details
 -------------------------
 
-* [#component-details-arduino]:**Arduino**(WIP)
+* [component-details-arduino]:**Arduino**(WIP)
 * **Raspberry Pi**(WIP)
 * **Motors**(WIP)
 * **Sensor**(WIP)
