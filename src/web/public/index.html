@@ -6,46 +6,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-<body>
-    <div id="title">
-        <h1>Welcome to Cash Stats</h1>
+<body id="body">
+    <div id="home-page" class="page" style="visibility:visible; display:block">
+        <div id="title">
+            <h1>Welcome to Cash Stats</h1>
+        </div>
+        <div id="items">
+            <div id="row-1" class="row-1">
+                <div id="cash-stats" class="item-large">
+                    <div id="select-cash-stats" class="select-div">
+                        <button id="cash-stats-button" class="button-large">Cash Stats</button>
+                    </div>
+                </div>
+                <div id="on-off" class="item-large">
+                    <div id="select-on-off" class="select-div">
+                        <button id="on-off-button" class="button-large">ON</button>
+                    </div>
+                </div>
+            </div>
+            <div id="row-2" class="row-2">
+                <div id="camera" class="item-small">
+                    <div id="select-camera" class="select-div">
+                        <button id="camera-button" class="button-small">Camera</button>
+                    </div>
+                </div>
+                <div id="sounds" class="item-small">
+                    <div id="select-sounds" class="select-div">
+                        <button id="sounds-button" class="button-small">Sounds</button>
+                    </div>
+                </div>
+            </div>
+            <div id="row-3" class="row-3">
+                <div id="blank" class="item-small">
+                    <div id="blank-sounds" class="select-div">
+                        <button id="blank-button" class="button-small">Blank</button>
+                    </div>
+                </div>
+                <div id="train" class="item-small">
+                    <div id="select-train" class="select-div">
+                        <button id="train-button" class="button-small">Train</button>
+                    </div>
+                </div>
+            </div>
+            <div id="row-4" class="row-4">
+                <div id="settings" class="item-small">
+                    <div id="select-settings" class="select-div">
+                        <button id="settings-button" class="button-small">Settings</button>
+                    </div>
+                </div>
+                <div id="MATT" class="item-small">
+                    <div id="select-MATT" class="select-div">
+                        <button id="MATT-button" class="button-small">MATT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="items">
-        <div id="row-1" class="row-1">
-            <div id="cash-stats" class="item-h50">
-                <div id="select-cash-stats" class="select-div">
-                    <button id="cash-stats-button" class="button-h50-w50">Cash Stats</button>
-                </div>
-            </div>
-            <div id="on-off" class="item-h50">
-                <div id="select-on-off" class="select-div">
-                    <button id="on-off-button" class="button-h50-w50">ON</button>
+    <div id="cash-stats-page" class="page" style="visibility: hidden; display: none">
+        <div id="cash-title">
+            <h1>Cash Stats</h1>
+        </div>
+        <div id="home-items">
+            <div id="cash-home-row-0" class="home-row-0">
+                <div id="cash-home" class="home-small">
+                    <div id="cash-select-home" class="home-select-div">
+                        <button id="cash-home-button" class="home-button-small">Home</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="row-2" class="row-2">
-            <div id="sounds" class="item-h25">
-                <div id="select-sounds" class="select-div">
-                    <button id="sounds-button" class="button-h25-w50">Sounds</button>
-                </div>
+        <div id="cash-items">
+            <div id="cash-row-1" class="cash-row-1">
             </div>
-            <div id="train" class="item-h25">
-                <div id="select-train" class="select-div">
-                    <button id="train-button" class="button-h25-w50">Train</button>
+        </div>
+    </div>
+    <div id="camera-page" class="page" style="visibility: hidden; display: none">
+        <div id="camera-title">
+            <h1>Camera</h1>
+        </div>
+        <div id="home-items">
+            <div id="camera-home-row-0" class="home-row-0">
+                <div id="camera-home" class="home-small">
+                    <div id="camera-select-home" class="home-select-div">
+                        <button id="camera-home-button" class="home-button-small">Home</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="row-3" class="row-3">
-            <div id="settings" class="item-h25">
-                <div id="select-settings" class="select-div">
-                    <button id="settings-button" class="button-h25-w50">Settings</button>
+        <div id="camera-items">
+
+        </div>
+    </div>
+    <div id="sounds-page" class="page" style="visibility: hidden; display: none">
+        <div id="sounds-title">
+            <h1>Sounds</h1>
+        </div>
+        <div id="home-items">
+            <div id="sounds-home-row-0" class="home-row-0">
+                <div id="sounds-home" class="home-small">
+                    <div id="sounds-select-home" class="home-select-div">
+                        <button id="sounds-home-button" class="home-button-small">Home</button>
+                    </div>
                 </div>
             </div>
-            <div id="MATT" class="item-h25">
-                <div id="select-MATT" class="select-div">
-                    <button id="MATT-button" class="button-h25-w50">MATT</button>
+        </div>
+        <div id="sounds-items">
+
+        </div>
+    </div>
+    <div id="blank-page" class="page" style="visibility: hidden; display: none">
+        <div id="blank-title">
+            <h1>Blank Page</h1>
+        </div>
+        <div id="home-items">
+            <div id="blank-home-row-0" class="home-row-0">
+                <div id="blank-home" class="home-small">
+                    <div id="blank-select-home" class="home-select-div">
+                        <button id="blank-home-button" class="home-button-small">Home</button>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div id="blank-items">
+
+        </div>
+    </div>
+    <div id="train-page" class="page" style="visibility: hidden; display: none">
+        <div id="train-title">
+            <h1>Training Mode</h1>
+        </div>
+        <div id="home-items">
+            <div id="train-home-row-0" class="home-row-0">
+                <div id="train-home" class="home-small">
+                    <div id="train-select-home" class="home-select-div">
+                        <button id="train-home-button" class="home-button-small">Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="train-items">
+
+        </div>
+    </div>
+    <div id="settings-page" class="page" style="visibility: hidden; display: none">
+        <div id="settings-title">
+            <h1>Settings</h1>
+        </div>
+        <div id="home-items">
+            <div id="settings-home-row-0" class="home-row-0">
+                <div id="settings-home" class="home-small">
+                    <div id="settings-select-home" class="home-select-div">
+                        <button id="settings-home-button" class="home-button-small">Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settings-items">
+
+        </div>
+    </div>
+    <div id="MATT-page" class="page" style="visibility: hidden; display: none">
+        <div id="MATT-title">
+            <h1>MATT Settings</h1>
+        </div>
+        <div id="home-items">
+            <div id="MATT-home-row-0" class="home-row-0">
+                <div id="MATT-home" class="home-small">
+                    <div id="MATT-select-home" class="home-select-div">
+                        <button id="MATT-home-button" class="home-button-small">Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="MATT-items">
+
         </div>
     </div>
 </body>

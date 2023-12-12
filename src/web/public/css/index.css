@@ -3,14 +3,19 @@ body {
     padding: 0%;
 }
 
-#title {
+.page{
+    margin: 0%;
+    padding: 0%;
+}
+
+#title, #cash-title, #camera-title, #sounds-title, #blank-title, #train-title, #settings-title, #MATT-title {
     width: 98vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 4vh;
+    /*margin-bottom: 2vh;*/
     text-align: center;
 }
 
-#items {
+#items, #cash-times{
     display: grid;
     height: 100%;
     width: 98vw;
@@ -19,55 +24,143 @@ body {
     padding: 0%;
 }
 
+.home-items {
+    display: inline-flex;
+    height: 10vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.home-row-0 {
+    display: inline-flex;
+    height: 10vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+
+.home-small {
+    height: 10vh;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.home-button-small {
+    height: 10vh;
+    width: 98vw;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px outset rgb(150, 150, 150);
+    font-size: 4vh;
+    text-align: center;
+}
+
 .select-div {
     margin: 0;
     padding: 0;
     width: 46vw;
+    /*border-color: black;
+    border-left: 1vw;*/
 }
+
+.home-select-div {
+    margin: 0;
+    padding: 0;
+    width: 98vw;
+}
+
+
+/* Home page styles */
 
 .row-1 {
     display: inline-flex;
-    height: 40vh;
+    height: 30vh;
     width: 98vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
 }
-.row-2 {
+.row-2, .row-3, .row-4 {
     display: inline-flex;
-    height: 20vh;
-    width: 98vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-}
-.row-3 {
-    display: inline-flex;
-    height: 20vh;
+    height: 15vh;
     width: 98vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
 }
 
-.item-h50 {
+.item-large {
     height: 40vh;
     width: 47vw;
     margin-left: 1vw;
     margin-right: 1vw;
 }
-.item-h25 {
-    height: 20vh;
+.item-small {
+    height: 15vh;
     width: 47vw;
     margin-left: 1vw;
     margin-right: 1vw;
 }
 
-.button-h50-w50 {
-    height: 40vh;
+.button-large {
+    height: 30vh;
     width: 47vw;
-    background-color: lightgray;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px solid rgb(150, 150, 150);
+    /*border-style: groove;
+    border-style: inset;*/
+    border-style: outset;
+    font-size: 4vh;
+    text-align: center;
+
 }
 
-.button-h25-w50 {
-    height: 20vh;
-    width: 47vw;
-    background-color: lightgray;
+.button-large:hover {
+    background-color: rgb(200, 200, 200);
 }
+
+.button-large:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.button-large:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.button-large:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.button-small {
+    height: 15vh;
+    width: 47vw;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px outset rgb(150, 150, 150);
+    font-size: 4vh;
+    text-align: center;
+}
+
+
+/* Cash page styles */
+
+.cash-row-1 {
+    display: inline-flex;
+    height: 30vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
