@@ -8,7 +8,7 @@
 </head>
 <body id="body">
     <div id="home-page" class="page" style="visibility:visible; display:block">
-        <div id="title">
+        <div id="title" style="visibility:hidden; display:none">
             <h1>Welcome to Cash Stats</h1>
         </div>
         <div id="items">
@@ -20,7 +20,7 @@
                 </div>
                 <div id="on-off" class="item-large">
                     <div id="select-on-off" class="select-div">
-                        <button id="on-off-button" class="button-large">ON</button>
+                        <button id="on-off-button" class="power-button-large-on">ON</button>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div id="camera-page" class="page" style="visibility: hidden; display: none">
-        <div id="camera-title">
+        <div id="camera-title" style="visibility: hidden; display: none">
             <h1>Camera</h1>
         </div>
         <div id="home-items">
@@ -94,7 +94,13 @@
             </div>
         </div>
         <div id="camera-items">
-
+            <div id="camera-row-1" class="camera-row-1">
+                <div id="camera-stream" class="camera-item-large">
+                    <div id="select-camera-stream" class="select-camera-stream-div">
+                        <img id="stream-image" class="xform" src="http://192.168.1.20:8080/?action=stream">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="sounds-page" class="page" style="visibility: hidden; display: none">

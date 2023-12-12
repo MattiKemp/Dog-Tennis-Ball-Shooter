@@ -122,6 +122,7 @@ body {
     margin-left: 1vw;
     margin-right: 1vw;
 }
+
 .item-small {
     height: 15vh;
     width: 47vw;
@@ -192,7 +193,6 @@ body {
     transition: all .1s ease-in-out;
 }
 
-
 .button-small:after{
     background-color: rgb(235, 235, 235);
     -webkit-transition: all 0.1s ease-in-out;
@@ -217,3 +217,128 @@ body {
     padding-bottom: 1vh;
 }
 
+/* on/off button styles */
+.power-button-large-on{
+    height: 30vh;
+    width: 47vw;
+    background-color: rgb(97, 255, 0);
+    color: black;
+    border:2px solid rgb(12, 170, 0);
+    /*border-style: groove;
+    border-style: inset;*/
+    border-style: outset;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.power-button-large-on:hover {
+    /* hover kinda breaks the color on mobile*/
+    /*background-color: rgb(62, 220, 0);*/
+}
+
+.power-button-large-on:focus{
+    background-color: rgb(97, 255, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.power-button-large-on:before{
+    /*background-color: rgb(37, 195, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;*/
+}
+
+
+.power-button-large-on:after{
+    background-color: rgb(97, 255, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.power-button-large-on:active{
+    background-color: rgb(37, 195, 0);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.power-button-large-off{
+    height: 30vh;
+    width: 47vw;
+    background-color: rgb(255, 50, 0);
+    color: black;
+    border:2px solid rgb(170, 0, 0);
+    /*border-style: groove;
+    border-style: inset;*/
+    border-style: outset;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.power-button-large-off:hover {
+    /* hover kinda breaks the color on mobile*/
+    /*background-color: rgb(62, 220, 0);*/
+}
+
+.power-button-large-off:focus{
+    background-color: rgb(255, 50, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.power-button-large-off:before{
+    /*background-color: rgb(195, 0, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;*/
+}
+
+.power-button-large-off:after{
+    background-color: rgb(255, 50, 0);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.power-button-large-off:active{
+    background-color: rgb(195, 0, 0);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+
+/* camera page styles */
+.camera-row-1 {
+    display: inline-flex;
+    height: 80vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.camera-item-large {
+    height: 88vh;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.camera-stream-select-div {
+    margin: 0;
+    padding: 0;
+    width: 98vw;
+    /*border-color: black;
+    border-left: 1vw;*/
+}
+
+#stream-image{
+    height:100%;
+    width:100%;
+    padding-left:1vw;
+    padding-right:1vw;
+}

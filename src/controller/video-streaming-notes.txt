@@ -1,0 +1,57 @@
+# check if camera is setup properly
+vcgencmd get_camera
+
+
+# display camera output in window
+raspivid -t 0
+
+# Video streaming to the remote server is accomplished with:
+
+userland, built with --aarch64 and modifiying the repo with:
+
+    $ git clone https://github.com/raspberrypi/userland 
+    $ cd userland
+    $ git revert f97b1af1b3e653f9da2c1a3643479bfd469e3b74
+    $ git revert e31da99739927e87707b2e1bc978e75653706b9c
+
+Then editing userland/interface/mmal/CMakeLists.txt by adding:
+SET(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-as-needed")
+like so:
+
+    # We support building both static and shared libraries
+    if (NOT DEFINED LIBRARY_TYPE)
+    set(LIBRARY_TYPE SHARED)
+    endif (NOT DEFINED LIBRARY_TYPE)
+
+    add_definitions(-Wall -Werror)
+
+    add_library(mmal SHARED util/mmal_util.c)
+
+    add_subdirectory(core)
+    add_subdirectory(util)
+    add_subdirectory(vc)
+    add_subdirectory(components)
+    if(NOT ARM64)
+       add_subdirectory(openmaxil)
+       add_subdirectory(client)
+    endif()
+
+    SET(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-as-needed")
+    target_link_libraries(mmal mmal_core mmal_util mmal_vc_client vcos mmal_components)
+
+then run:
+
+    $./buildme --aarch64
+
+Validate that /opt/vc/ exists and has been built too
+Then copy all built libs: 
+
+    $sudo cp /opt/vc/lib/*.so /usr/lib/aarch64-linux-gnu/
+
+Thanks to: https://github.com/waveform80/picamera/issues/540#issuecomment-881645216 
+
+Once userland is properly configured and installed, MJPG-Streamer must be properly setup and installed:
+https://github.com/jacksonliam/mjpg-streamer.git
+
+
+# The camera stream is started by running ./stream-server.sh, which can than be accessed at http://localhost:8080/?action=stream
