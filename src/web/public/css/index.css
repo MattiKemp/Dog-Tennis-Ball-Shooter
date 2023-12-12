@@ -1,0 +1,219 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.page{
+    margin: 0%;
+    padding: 0%;
+}
+
+#title, #cash-title, #camera-title, #sounds-title, #blank-title, #train-title, #settings-title, #MATT-title {
+    width: 98vw;
+    margin-top: 4vh;
+    /*margin-bottom: 2vh;*/
+    text-align: center;
+}
+
+#items, #cash-times{
+    display: grid;
+    height: 100%;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 0%;
+}
+
+.home-items {
+    display: inline-flex;
+    height: 10vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.home-row-0 {
+    display: inline-flex;
+    height: 10vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+
+.home-small {
+    height: 10vh;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.home-button-small {
+    height: 10vh;
+    width: 98vw;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px outset rgb(150, 150, 150);
+    font-size: 4vh;
+    text-align: center;
+}
+
+.home-button-small:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.home-button-small:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.home-button-small:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.home-button-small:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.select-div {
+    margin: 0;
+    padding: 0;
+    width: 46vw;
+    /*border-color: black;
+    border-left: 1vw;*/
+}
+
+.home-select-div {
+    margin: 0;
+    padding: 0;
+    width: 98vw;
+}
+
+
+/* Home page styles */
+
+.row-1 {
+    display: inline-flex;
+    height: 30vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+.row-2, .row-3, .row-4 {
+    display: inline-flex;
+    height: 15vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.item-large {
+    height: 40vh;
+    width: 47vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+.item-small {
+    height: 15vh;
+    width: 47vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.button-large {
+    height: 30vh;
+    width: 47vw;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px solid rgb(150, 150, 150);
+    /*border-style: groove;
+    border-style: inset;*/
+    border-style: outset;
+    font-size: 4vh;
+    text-align: center;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.button-large:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.button-large:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.button-large:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.button-large:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.button-small {
+    height: 15vh;
+    width: 47vw;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border:2px outset rgb(150, 150, 150);
+    font-size: 4vh;
+    text-align: center;
+}
+
+.button-small:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.button-small:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.button-small:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.button-small:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+/* Cash page styles */
+
+.cash-row-1 {
+    display: inline-flex;
+    height: 30vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
