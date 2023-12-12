@@ -21,6 +21,7 @@ function show(name){
 
 function displayHomePage(){
     show("home-page");
+    document.getElementById("stream-image").src = "null";
 }
 
 function displayCashPage(){
@@ -29,6 +30,7 @@ function displayCashPage(){
 
 function displayCameraPage(){
     show('camera-page');
+    document.getElementById("stream-image").src = "http://192.168.1.20:8080/?action=stream";
 }
 
 function displaySoundsPage(){
@@ -59,8 +61,17 @@ document.getElementById("cash-stats-button").addEventListener("click", function(
 });
 document.getElementById("on-off-button").addEventListener("click", function(){
     console.log("on off button clicked");
-    powerButton = document.getElementById('on-off-button');
-    if (powerButton.)
+    const powerButton = document.getElementById('on-off-button');
+    if (powerButton.textContent === "ON"){
+        powerButton.textContent = "OFF"
+        console.log(powerButton.className);
+        powerButton.className = 'power-button-large-off';
+    }
+    else{
+        powerButton.textContent = "ON"
+        console.log(powerButton.className);
+        powerButton.className = 'power-button-large-on';
+    }
 });
 document.getElementById("camera-button").addEventListener("click", function(){
     console.log("camera button clicked");
