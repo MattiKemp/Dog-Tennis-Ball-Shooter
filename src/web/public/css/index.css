@@ -58,6 +58,32 @@ body {
     text-align: center;
 }
 
+.home-button-small:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.home-button-small:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.home-button-small:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.home-button-small:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
 .select-div {
     margin: 0;
     padding: 0;
@@ -114,7 +140,9 @@ body {
     border-style: outset;
     font-size: 4vh;
     text-align: center;
-
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .button-large:hover {
@@ -153,6 +181,31 @@ body {
     text-align: center;
 }
 
+.button-small:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.button-small:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+.button-small:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.button-small:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
 
 /* Cash page styles */
 

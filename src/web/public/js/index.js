@@ -57,52 +57,46 @@ document.getElementById("cash-stats-button").addEventListener("click", function(
     console.log("cash stats button clicked");
     displayCashPage();
 });
-
 document.getElementById("on-off-button").addEventListener("click", function(){
     console.log("on off button clicked");
+    powerButton = document.getElementById('on-off-button');
+    if (powerButton.)
 });
-
 document.getElementById("camera-button").addEventListener("click", function(){
     console.log("camera button clicked");
     displayCameraPage();
 });
-
 document.getElementById("sounds-button").addEventListener("click", function(){
     console.log("sounds button clicked");
     displaySoundsPage();
 });
-
 document.getElementById("blank-button").addEventListener("click", function(){
     console.log("blank button clicked");
     displayBlankPage();
 });
-
 document.getElementById("train-button").addEventListener("click", function(){
     console.log("train button clicked");
     displayTrainPage();
 });
-
 document.getElementById("settings-button").addEventListener("click", function(){
     console.log("settings button clicked");
     displaySettingsPage();
 });
-
 document.getElementById("MATT-button").addEventListener("click", function(){
     console.log("MATT button clicked");
     displayMattPage();
 });
 
 /* return Home button click listerns */
+
 document.getElementById("cash-home-button").addEventListener("click", function(){
     console.log("cash stats home button clicked");
     displayHomePage();
 });
-
 document.getElementById("camera-home-button").addEventListener("click", function(){
     console.log("camera home button clicked");
     displayHomePage();
 });
-
 document.getElementById("sounds-home-button").addEventListener("click", function(){
     console.log("sounds home button clicked");
     displayHomePage();
@@ -123,3 +117,4 @@ document.getElementById("MATT-home-button").addEventListener("click", function()
     console.log("MATT home button clicked");
     displayHomePage();
 });
+
