@@ -10,6 +10,7 @@
     "license": "",
     "description": "Remote web server for Open Shooter",
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "socket.io-client": "^4.7.2"
     }
 }

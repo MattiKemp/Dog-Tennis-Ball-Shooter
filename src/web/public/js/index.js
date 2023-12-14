@@ -129,3 +129,12 @@ document.getElementById("MATT-home-button").addEventListener("click", function()
     displayHomePage();
 });
 
+
+/* MATT buttons click listeners */
+
+document.getElementById("MATT-CRASH-button").addEventListener("click", function(){
+    console.log("MATT CRASH button clicked!");
+    //window.location.replace(window.location.href + 'crash/');
+    window.location.href = window.location.href + 'crash/';
+    //socket.connect("127.0.0.1:9999");
+});

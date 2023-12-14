@@ -2,11 +2,19 @@ const http = require('http');
 const express = require('express');
 const path = require('path');
 const app = express();
+const io = require('socket.io-client');
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));// default URL for website
 //app.use(express.static(path.join(__dirname, '../www')));
 
 console.log(path.join(__dirname + '/public'));
+
+app.get('/crash/', function(req,res){
+  console.log("/crash called");
+  const socket = io.connect('http://127.0.0.1:9999');
+  socket.close();
+  res.sendFile(path.join(__dirname + '/public/crash/crash.html'));
+});
 
 app.use('/', function(req,res){
   res.sendFile(path.join(__dirname + '/public/index.html'));
