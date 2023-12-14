@@ -1,9 +1,9 @@
 # check if camera is setup properly
-vcgencmd get_camera
+$ vcgencmd get_camera
 
 
 # display camera output in window
-raspivid -t 0
+$ raspivid -t 0
 
 # Video streaming to the remote server is accomplished with:
 
@@ -41,12 +41,12 @@ like so:
 
 then run:
 
-    $./buildme --aarch64
+    $ ./buildme --aarch64
 
 Validate that /opt/vc/ exists and has been built too
 Then copy all built libs: 
 
-    $sudo cp /opt/vc/lib/*.so /usr/lib/aarch64-linux-gnu/
+    $ sudo cp -r /opt/vc/lib/*.so /usr/lib/aarch64-linux-gnu/
 
 Thanks to: https://github.com/waveform80/picamera/issues/540#issuecomment-881645216 
 
