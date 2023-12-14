@@ -1,0 +1,265 @@
+### BEFORE ANY INSTALLATION ATTEMPTS ###
+
+Copy any files you want to keep safe to another device or make a backup of your
+SD card:
+
+https://raspberrystreet.com/learn/how-to-backup-raspberrypi-sdcard
+https://www.makeuseof.com/how-to-back-up-your-raspberry-pi-sd-card-on-windows/
+
+
+Make a save of your boot configs:
+
+Ubuntu:
+$ mkdir ~/boot_config_backup/
+$ mkdir ~/boot_config_backup/firmware/
+$ mkdir ~/boot_config_backup/overlays/
+$ sudo cp /boot/config.txt ~/boot_config_backup/config.txt
+$ sudo cp /boot/firmware/config.txt ~/boot_config_backup/firmware/config.txt
+$ sudo cp /boot/firmware/cmdline.txt ~/boot_config_backup/firmware/cmdline.txt
+$ sudo cp /boot/firmware/usercfg.txt ~/boot_config_backup/firmware/usercfg.txt
+$ sudo cp /boot/firmware/syscfg.txt ~/boot_config_backup/firmware/syscfg.txt
+$ sudo cp -r /boot/overlays/ ~/boot_config_backup/overlays/
+$ sudo cp -r /boot/firmware/overlays/ ~/boot_config_backup/firmware/overlays/
+
+Raspbian:
+* TO DO *
+
+# NEVER MODIFY ANY OF THE FILES IN ~/boot_config_backup/ #
+
+
+PLEASE INSTALL AND TEST SSH ON YOUR PI (see note in all caps below)
+
+Installing SSH on your Pi:
+
+$ sudo apt-get install openssh-client openssh-server
+
+Testing SSH by remotely connecting
+
+$ uname -n
+$ ip a
+
+Save the output of $ uname -n, this is your Pi's Linux Username, you also need this to connect. From the output of $ ip a, find either "eth0", "wlan0", or some variation of the two. Look underneath it for "inet", copy the number next to it. It should look something like: 192.168.1.x/24 or XXX.XXX.XXX.XXX/24, where "X" are digits and the number of X's between each period vary from 1 to 3. Save this number, you can ignore the "/24" at the end. This is the ip address of your device on the local network, it is needed to remotely connect to your device using SSH. Your Pi's local ip may change when rebooting as it is dynamically set unless configured to be static, see below tutorial if you don't want to have to worry about this. 
+
+Assigning a static ip:
+Ubuntu:
+https://www.freecodecamp.org/news/setting-a-static-ip-in-ubuntu-linux-ip-address-tutorial/
+Raspbian:
+https://www.tomshardware.com/how-to/static-ip-raspberry-pi
+
+Now, install SSH on another device that is on the same network as your Pi. If your other device is running Linux, then refollow the installation step above. If your other device is running MacOS, it already has SSH installed, open a terminal and follow the below steps. If your other device is running Windows, follow this guide to install and use SSH:
+https://www.hawaii.edu/askus/1874. Make sure your Raspberry Pi is on and fully booted, and try connecting to it with your Raspberry Pi's Username and local ip:
+
+$ ssh "username"@"local ip"
+Example: $ ssh bob@192.168.1.9
+
+You will be asked to enter the Raspberry Pi's password, type it and hit enter, you won't be able to see the letters you are typing. It will likely ask you about a fingerprint, type "yes" and hit enter. You are now remotely connected to your Pi! If you run into any video issues, you can usually remote into your Pi and modify or revert your boot configurations, using your backup, to bring back video output after a reboot.
+
+
+# EVEN JUST FOLLOWING THE MANUFACTURES INSTALLATION GUIDE MAY BRICK YOUR OS. #
+# IF BOTH YOUR MONITOR AND LCD BLACK/WHITE SCREEN AND YOU CAN'T SEE THE GUI  # 
+# TRY CONNECTING TO THE DEVICE USING ANOTHER COMPUTER WITH SSH, YOU CAN      # 
+# ALWAYS UNINSTALL THE DRIVERS OR REVERT TO YOUR BOOT BACKUP IF THERE IS AN  #
+# SSH CONNECTION AVAILABLE. THIS ISN'T A TRIVIAL WARNING, THESE CHEAP        #
+# DISPLAYS ARE NOTORIOUS FOR THEIR HORRIBLE DRIVER SUPPORT AND THE COMPANIES #
+# WILL LIKELY NOT RESPOND TO YOUR REQUESTS. IF IT DOESN'T WORK OUT OF THE    #
+# BOX THEN YOU WILL EXPERIENCE AT LEAST SOME DRIVER ISSUES, NO VIDEO OUTPUT, # 
+# BOOT FAILURES, OR COMPLETE IMAGE BRICKINGS. WHEN I INSTALLED MY LCD, IT    #
+# TOOK MANY REBOOTS, TROUBLESHOOTING, AND REMOTE CONNECTIONS TO GET WORKING. #
+# MANY PEOPLE ONLINE STATED THEIR DISPLAY COMPLETELY BRICKED THEIR OS.       #
+
+Completely reverting your boot configuation:
+
+Should you run into any issues, such as video output or boot problems, you can fix them by reverting your boot configuration, so long as you can connect to the Pi via SSH. If you having trouble connecting, either wait a little bit for the Pi to fully boot up, or try incrementing and decrementing the last number in your Pi's local ip address. It may have changed when rebooting if you didn't make it static, it likely only changed slightly, example:
+$ ssh bob@192.168.1.9 	# no connection 
+$ ssh bob@192.168.1.8 	# no connection 
+$ ssh bob@192.168.1.10 	# no connection 
+$ ssh bob@192.168.1.11 	# connection made
+
+If you are able to connect to your Pi, despite there being no video, you can revert your boot configurating using the commands below:
+
+$ sudo cp ~/boot_config_backup/config.txt /boot/config.txt
+$ sudo cp ~/boot_config_backup/firmware/config.txt /boot/firmware/config.txt
+$ sudo cp ~/boot_config_backup/firmware/cmdline.txt /boot/firmware/cmdline.txt
+$ sudo cp ~/boot_config_backup/firmware/usercfg.txt /boot/firmware/usercfg.txt
+$ sudo cp ~/boot_config_backup/firmware/syscfg.txt /boot/firmware/syscfg.txt
+$ sudo cp -r ~/boot_config_backup/overlays/ /boot/overlays/
+$ sudo cp -r ~/boot_config_backup/firmware/overlays/ /boot/firmware/overlays/
+$ sudo reboot
+
+This should bring back video and most other boot problems. If you cannot connect with SSH, even after waiting several minutes for it to boot, then you will likely have to reformat your SSD and reinstall whatever operating system you previously used. 
+
+
+ 
+# DISPLAY DRIVER INSTALLATION #
+Frist, follow the manufacturer's installation documentation, obviously.
+If you have troubles and are running ubuntu, then uninstall the drivers and follow the installation steps at:
+https://github.com/lcdwiki/LCD-show-ubuntu/tree/master
+
+To calibrate the touchscreen, run xinput_calibration, follow the on screen instructions, and make the appropriate corrections to your respective /overlay/*.conf file. It will tell you exactly what file to edit and what changes to make.
+
+
+# TROUBLE SHOOTING #
+
+If you experience issues, especially with a Raspberry Pi 4, try each of these and potentially combining a few of them:
+
+
+- If screen is either stuck on white or black despite posting:
+
+Option 1:
+==============================================================
+
+1. $ sudo vim /boot/firmware/config.txt
+
+2. Find the line with: dtoverlay=vc4-fkms-v3d
+
+3. Change to #dtoverlay=vc4-fkms-v3d
+
+4. Save
+
+5. $ sudo reboot
+
+==============================================================
+
+
+
+
+
+Option 2 (Raspberry Pi4):
+===============================================================
+
+1. $ sudo vim /boot/firmware/config.txt
+
+2. change to: 
+
+---------------------------------------------------------------
+[pi4]
+kernel=uboot_rpi_4.bin
+#dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+
+[pi2]
+kernel=uboot_rpi_2.bin
+
+[pi3]
+kernel=uboot_rpi_3.bin
+
+[all]
+arm_64bit=1
+device_tree_address=0x03000000
+
+
+enable_uart=1
+cmdline=cmdline.txt
+
+include syscfg.txt
+include usercfg.txt
+
+disable_overscan=1
+dtoverlay=vc4-fkms-v3d
+hdmi_drive=2
+hdmi_force_hotplug=1
+dtparam=i2c_arm=on
+dtparam=spi=on
+enable_uart=1
+dtoverlay=tft35a:rotate=180
+
+dtparam=audio=on
+
+display_rotate=1
+dtoverlay=dpi18
+overscan_left=0
+overscan_right=0
+overscan_top=1
+overscan_bottom=1
+framebuffer_width=480
+framebuffer_height=320
+enable_dpi_lcd=1
+#display_default_lcd=1
+dpi_group=2
+dpi_mode=87
+dpi_output_format=0x07f205
+hdmi_timings=320 0 28 18 28 480 0 2 2 4 0 0 0 60 0 32000000 6
+
+# enable camera on boot
+start_x=1
+
+---------------------------------------------------------------
+
+3. Save
+
+4. $ sudo reboot
+
+===============================================================
+
+
+
+
+
+Option 3 (Ubuntu >= 20.04 or RaspberryPi 4+ 64 bit):
+===============================================================
+
+1. $ sudo vim /boot/firmware/config.txt
+
+2. find device_tree_address=0x0XXXXXXX
+
+3. immediately below it, add:
+---------------------------------------------------------------
+enable_uart=1
+cmdline=cmdline.txt
+
+include syscfg.txt
+include usercfg.txt
+---------------------------------------------------------------
+
+4. Save
+
+5. $ sudo reboot
+
+===============================================================
+
+
+
+
+
+Option 4:
+===============================================================
+
+1. $ sudo vim /boot/firmware/cmdline.txt
+
+2. add "fbcon=map:10" right after "rootwait"
+Example: 
+... elevator=deadline rootwait fixrtc quiet ...
+... elevator=deadline rootwait fbcon=map:10 fixrtc quiet ...
+
+3. Save
+
+4. $ sudo reboot
+
+===============================================================
+
+
+
+
+
+- If when rebooting, your screen turns from white to black, and then text quickly scrolls by or stays on the screen, then your Display is working but it is not being told to display the screen.
+
+Option 1:
+===============================================================
+
+
+1. $ sudo vim /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+
+2. find: Option          "fbdev" "/dev/fb2"
+
+3. Change "/dev/fb2" to "/dev/fb1"
+
+4. Save
+
+5. $ sudo reboot
+
+===============================================================
+
+
+If none of these help you then your screen may be defective, request a refund or a replacement. If you know what you are doing, you can try finding other solutions online. 
+
+
