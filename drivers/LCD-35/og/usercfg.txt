@@ -1,0 +1,10 @@
+# Place "config.txt" changes (dtparam, dtoverlay, disable_overscan, etc.) in
+# this file. Please refer to the README file for a description of the various
+# configuration files on the boot partition.
+#
+disable_overscan=1
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+gpu_mem=128
+hdmi_enable_4k60=1
+hdmi_drive=2
