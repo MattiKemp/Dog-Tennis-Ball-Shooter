@@ -92,6 +92,14 @@ body {
     border-left: 1vw;*/
 }
 
+.select-div-large-large {
+    margin: 0;
+    padding: 0;
+    width: 98vw;
+    /*border-color: black;
+    border-left: 1vw;*/
+}
+
 .home-select-div {
     margin: 0;
     padding: 0;
@@ -341,4 +349,65 @@ body {
     width:100%;
     padding-left:1vw;
     padding-right:1vw;
+}
+
+
+
+/* MATT page styles */
+
+
+.item-large-large {
+    display: inline-flex;
+    height: 40vh;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.MATT-row-1 {
+    display: inline-flex;
+    height: 40vh;
+    width: 98vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.MATT-large-large {
+    height: 40vh;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.MATT-button-large-large {
+    height: 40vh;
+    width: 98vw;
+    border:2px outset rgb(150, 150, 150);
+    font-size: 4vh;
+    text-align: center;
+}
+
+.MATT-button-large-large:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.MATT-button-large-large:before{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.MATT-button-large-large:after{
+    background-color: rgb(235, 235, 235);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.MATT-button-large-large:active{
+    background-color: rgb(175, 175, 175);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
 }
