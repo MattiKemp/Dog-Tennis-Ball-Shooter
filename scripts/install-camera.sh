@@ -18,8 +18,9 @@ sudo apt-get update
 sudo apt-get install libraspberrypi0 libraspberrypi-dev libraspberrypi-doc
 sudo apt-get update
 
+cd ./src/controller/
+
 # install userland
-touch userland_build_out.txt
 git clone https://github.com/raspberrypi/userland
 cd userland
 git revert f97b1af1b3e653f9da2c1a3643479bfd469e3b74
@@ -32,6 +33,7 @@ mv ./interface/mmal/CMakeLists-temp.txt ./interface/mmal/CMakeLists.txt
 
 # build userland
 printf "===== Starting userland build =====\n"
+touch userland_build_out.txt
 sudo ./buildme --aarch64 &>../userland_build_out.txt
 
 # copy userland libraries
@@ -118,11 +120,11 @@ fi
 
 
 # build and install mjpg-streamer
-touch mjpg-streamer_make_out.txt
-touch mjpg-streamer_make_install_out.txt
 git clone https://github.com/jacksonliam/mjpg-streamer.git
 cd mjpg-streamer
 cd mjpg-streamer-experimental
+touch mjpg-streamer_make_out.txt
+touch mjpg-streamer_make_install_out.txt
 printf "===== Starting mjpg-streamer make =====\n"
 make distclean
 make CMAKE_BUILD_TYPE=Debug &>../../mjpg-streamer_make_out.txt
@@ -178,3 +180,4 @@ if grep -q "start_x=1" /boot/firmware/config.txt; then
 else
         echo "\nstart_x=1" >> /boot/firmware/config.txt
 fi
+cd ../../
