@@ -30,7 +30,7 @@ function displayCashPage(){
 
 function displayCameraPage(){
     show('camera-page');
-    document.getElementById("stream-image").src = "http://192.168.1.20:8080/?action=stream";
+    document.getElementById("stream-image").src = "http://192.168.1.9:8080/?action=stream";
 }
 
 function displaySoundsPage(){
