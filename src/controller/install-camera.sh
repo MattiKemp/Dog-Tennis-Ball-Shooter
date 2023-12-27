@@ -171,10 +171,10 @@ fi
 
 
 # enable camera: add start_x=1 to /boot/firmware/config.txt
-#mkdir /boot_backup/
-#sudo cp /boot/firmware/config.txt ./boot_backup/config.txt
-#if grep -q "start_x=1" /boot/firmware/config.txt; then
-#        echo "start_x=1 found in /boot/firmware/config.txt, not adding"
-#else
-#        echo "\nstart_x=1" >> /boot/firmware/config.txt
-#fi
+mkdir /boot_backup/
+sudo cp /boot/firmware/config.txt ./boot_backup/config.txt
+if grep -q "start_x=1" /boot/firmware/config.txt; then
+        echo "start_x=1 found in /boot/firmware/config.txt, not adding"
+else
+        echo "\nstart_x=1" >> /boot/firmware/config.txt
+fi
