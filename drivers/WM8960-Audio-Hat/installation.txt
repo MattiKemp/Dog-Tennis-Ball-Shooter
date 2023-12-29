@@ -1,0 +1,75 @@
+########## 64 BIT INSTALLATION ##########
+If you are using a 64bit raspberry pi, then you need to install the audio drivers as such:
+
+1. $ uname -a
+
+The output should look something like this:
+> Linux ubuntu 5.4.0-1026-raspi #29-Ubuntu SMP PREEMPT Mon Dec 14 17:01:16 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+
+Take the first 2 digits of your kernel (in the example above 5.4) and enter them at the end of the following command:
+
+2. $ git clone https://github.com/HinTak/seeed-voicecard.git -b X.X
+
+Example: $ git clone https://github.com/HinTak/seeed-voicecard.git -b 5.4
+
+Then proceed with audio driver installations:
+
+3. $ cd seeed-voicecard
+
+4. $ sudo ./install.sh
+
+If you are met with any errors, see further troubleshooting suggestions below. Otherwise, reboot your system:
+
+5. $ sudo reboot
+
+
+########## CHECKING INSTALLATION ##########
+
+From: https://www.waveshare.com/wiki/WM8960_Audio_HAT
+
+- Check if the driver is installed.
+
+1. $ sudo dkms status
+
+Example output:
+> wm8960-soundcard, 1.0, 4.19.58-v7l+, armv7l: installed
+or
+> seeed-voicecard, 0.3, 5.4.0-1026-raspi, aarch64: installed
+
+
+- Check the Soundcard.
+
+2. $ aplay -l
+
+Example output:
+> **** List of PLAYBACK Hardware Devices ****
+card 0: wm8960soundcard [wm8960-soundcard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+> **** List of PLAYBACK Hardware Devices ****
+card 2: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+
+- Test recording.
+
+3. $ arecord -l
+
+Example output:
+> **** List of CAPTURE Hardware Devices ****
+card 0: wm8960soundcard [wm8960-soundcard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+> **** List of CAPTURE Hardware Devices ****
+card 2: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+
+- Testing recording and playback.
+
+4. $ arecord -D hw:2,0 -d 5 -f cd test.wav -c 2 | aplay -D hw:2,0 -d 5 test.wav
+
+You may need to change the hw:2,0 numbers based on the output of aplay -l and arecord -l
